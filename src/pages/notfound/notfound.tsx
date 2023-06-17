@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Card, ErrorBlock } from 'antd-mobile';
 import { MetaHead } from '../../utils/metahead';
-import Base from '../../components/layout/base';
+import { Base } from '../../components/layout';
 
 export function NotFound() {
  return (

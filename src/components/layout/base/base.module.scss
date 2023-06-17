@@ -1,11 +1,11 @@
-@import '../../assets/styles/responsive.scss';
-@import '../../assets/styles/coloring.scss';
+@import '../../../assets/styles/responsive.scss';
+@import '../../../assets/styles/coloring.scss';
 
 .rtga {
  &__layout {
   width: 415px;
   display: flex;
-  background: $white-color;
+  background: $grey-light-color;
   min-height: 100vh;
   position: relative;
   margin: auto;
@@ -13,7 +13,7 @@
 
   &__content {
    flex: 1;
-   margin-top: 60px;
+   margin-bottom: 55px;
   }
  }
 }

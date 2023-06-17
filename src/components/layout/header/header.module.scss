@@ -3,8 +3,8 @@
 
 .rtga {
  &__header {
-  flex: 0;
-  position: fixed;
+  top: 0;
+  position: sticky;
   width: 415px;
   background: $white-color;
   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 70px;
