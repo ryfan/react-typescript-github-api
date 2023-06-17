@@ -1,0 +1,27 @@
+@import '../../assets/styles/responsive.scss';
+@import '../../assets/styles/coloring.scss';
+
+.rtga {
+ &__layout {
+  width: 415px;
+  display: flex;
+  background: $white-color;
+  min-height: 100vh;
+  position: relative;
+  margin: auto;
+  flex-direction: column;
+
+  &__content {
+   flex: 1;
+   margin-top: 60px;
+  }
+ }
+}
+
+@include media(phone-only) {
+ .rtga {
+  &__layout {
+   width: 100%;
+  }
+ }
+}
