@@ -41,6 +41,9 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_TOKEN_GITHUB`
 
+`REACT_APP_SITE_KEY`
+
+`REACT_APP_SECRET_KEY`
 
 ## Tech Stack
 React, TypeScript, Ant Design Mobile, HTML, SCSS
