@@ -52,7 +52,7 @@ export function Results({
            </Card>
           </Col>
          ) : (
-          map(take(ListRepos, 5), (LR: any, idx: string) => (
+          map(ListRepos, (LR: any, idx: string) => (
            <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} key={idx}>
             <Card
              loading={Loading}
@@ -68,7 +68,7 @@ export function Results({
              }
              actions={[
               <Tooltip placement="bottom" title="URL Repository">
-               <LinkOutline key="url" onClick={() => onGoToRepo(LR.html_url)} />
+               <LinkOutline key={idx} onClick={() => onGoToRepo(LR.html_url)} />
               </Tooltip>
              ]}
             >
