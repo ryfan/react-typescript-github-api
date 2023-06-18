@@ -1,12 +1,12 @@
-import { Modal, TabBar } from 'antd-mobile';
+import { Modal, TabBar } from "antd-mobile";
 import {
  AppOutline,
  HeartOutline,
  InformationCircleOutline
-} from 'antd-mobile-icons';
-import { useState } from 'react';
-import styles from './footer.module.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
+} from "antd-mobile-icons";
+import { useState } from "react";
+import styles from "./footer.module.scss";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
  const location = useLocation();
@@ -16,7 +16,7 @@ export default function Footer() {
  const navigate = useNavigate();
  const showModal = () => {
   setvisible(true);
-  setactiveMenu('/about');
+  setactiveMenu("/about");
  };
 
  const hideModal = () => {
@@ -25,18 +25,18 @@ export default function Footer() {
  };
 
  const Home = () => {
-  navigate('/');
+  navigate("/");
  };
 
  const tabs = [
   {
-   key: '/',
-   title: 'Home',
+   key: "/",
+   title: "Home",
    icon: <AppOutline onClick={Home} />
   },
   {
-   key: '/about',
-   title: 'About',
+   key: "/about",
+   title: "About",
    icon: <InformationCircleOutline onClick={showModal} />
   }
  ];
@@ -54,12 +54,10 @@ export default function Footer() {
     content={
      <div>
       <p>Author by</p>
-      <p>Ryfan Aditya Indra</p>
-      <p>Software Engineer Frontend</p>
-      <p>Restful API by GitHub API</p>
-      <p>
-       Made with <HeartOutline /> at Bogor
-      </p>
+      <span>
+       Ryfan Aditya Indra <br /> Software Engineer Frontend <br /> Restful API
+       by GitHub API <br /> Made with <HeartOutline /> at Bogor
+      </span>
      </div>
     }
     onClose={hideModal}

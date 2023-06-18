@@ -2,7 +2,7 @@
 
 .rtga {
  &__container {
-  margin: 20px 16px;
+  margin: 16px;
 
   &__loading {
    position: absolute;
@@ -27,6 +27,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     width: 200px;
+   }
+
+   &__description {
+    color: $grey-color;
    }
   }
  }

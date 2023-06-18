@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { RoutesApp } from './routes';
-import './assets/styles/global.scss';
-import 'antd/dist/reset.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { RoutesApp } from "./routes";
+import { Analytics } from "@vercel/analytics/react";
+import "./assets/styles/global.scss";
+import "antd/dist/reset.css";
 
 const root = ReactDOM.createRoot(
- document.getElementById('root') as HTMLElement
+ document.getElementById("root") as HTMLElement
 );
 root.render(
  <React.StrictMode>
   <BrowserRouter>
+   <Analytics />
    <RoutesApp />
   </BrowserRouter>
  </React.StrictMode>
