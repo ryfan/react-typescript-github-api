@@ -18,6 +18,7 @@ export function Home() {
  const [ValueInput, setValueInput] = useState<string>("");
  const [ListSearching, setListSearching] = useState<string[]>([]);
  const [ListRepos, setListRepos] = useState<object[]>([]);
+ const [CurrentValue, setCurrentValue] = useState<string>("");
  const [form] = Form.useForm();
 
  useEffect(() => {
@@ -49,18 +50,24 @@ export function Home() {
  };
 
  const onGetRepos = async (value: string) => {
-  setLoading(true);
-  setListRepos([]);
-  const reqRepos = await octokit.request("GET /users/{username}/repos", {
-   username: value,
-   headers: {
-    "X-GitHub-Api-Version": "2022-11-28"
+  if (CurrentValue !== value) {
+   setLoading(true);
+   const reqRepos = await octokit.request("GET /users/{username}/repos", {
+    username: value,
+    headers: {
+     "X-GitHub-Api-Version": "2022-11-28"
+    }
+   });
+   if (reqRepos.status === 200) {
+    setListRepos(reqRepos?.data);
+    setCurrentValue(value);
+    setTimeout(() => {
+     setLoading(false);
+    }, 1000);
    }
-  });
-  if (reqRepos.status === 200) {
-   setListRepos(reqRepos?.data);
+  } else {
    setTimeout(() => {
-    setLoading(false);
+    setListRepos([]);
    }, 1000);
   }
  };
